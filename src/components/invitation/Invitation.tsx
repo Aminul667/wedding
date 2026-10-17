@@ -27,6 +27,13 @@ export default function Invitation() {
           <EventColumn />
         </div>
       </article>
+
+      <footer className="inv-credit">
+        Designed &amp; developed by{" "}
+        <a href="https://wa.me/8801324184222" target="_blank" rel="noopener noreferrer">
+          Md Aminul Islam
+        </a>
+      </footer>
     </main>
   );
 }

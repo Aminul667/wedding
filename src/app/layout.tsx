@@ -24,6 +24,13 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
+  authors: [{ name: "Md Aminul Islam", url: "https://wa.me/8801324184222" }],
+  creator: "Md Aminul Islam",
+  publisher: "Md Aminul Islam",
+  other: {
+    developer: "Md Aminul Islam",
+    "developer-phone": "+8801324184222",
+  },
   openGraph: {
     type: "website",
     url: "/",

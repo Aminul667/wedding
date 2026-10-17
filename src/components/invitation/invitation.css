@@ -1,8 +1,8 @@
 /* All sizes use --u = 1/1672 of the card width, so the landscape card scales as one piece. */
 
-.inv-wrap{min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:16px;box-sizing:border-box;background:#d8cab0}
+.inv-wrap{position:relative;min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:16px 16px 34px;box-sizing:border-box;background:#d8cab0}
 .inv-card{--u:calc(100cqw / 1672);position:relative;container-type:inline-size;overflow:hidden;
-  width:min(calc(100vw - 32px), calc((100dvh - 32px) * 1672 / 941));aspect-ratio:1672/941;
+  width:min(calc(100vw - 32px), calc((100dvh - 50px) * 1672 / 941));aspect-ratio:1672/941;
   color:#3f3024;font-family:var(--inv-serif),Georgia,serif;
   background-color:#f3e8d3;
   background-image:
@@ -80,9 +80,16 @@
 .inv-cd-lbl{text-transform:uppercase;letter-spacing:.06em;font-size:calc(13*var(--u));font-weight:600}
 .inv-cd-done{font-family:var(--inv-script),cursive;color:#7b1e24;font-size:calc(30*var(--u));margin-top:calc(8*var(--u))!important}
 
+/* developer credit, sits under the card */
+.inv-credit{position:absolute;left:0;right:0;bottom:8px;text-align:center;font-family:var(--inv-serif),Georgia,serif;
+  font-size:13px;letter-spacing:.06em;color:#5a4632}
+.inv-credit a{color:#7b1e24;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(123,30,36,.35)}
+.inv-credit a:hover,.inv-credit a:focus-visible{border-bottom-color:#7b1e24;outline:none}
+
 /* ---------- responsive: stacked layout on narrow / short screens ---------- */
 @media (max-width: 899px), (max-height: 479px){
-  .inv-wrap{padding:0;place-items:start center;background:#f3e8d3}
+  .inv-wrap{padding:0;place-items:start center;align-content:start;background:#f3e8d3}
+  .inv-credit{position:static;padding:4px 16px 24px}
   .inv-card{--u:calc(100cqw / 480);width:min(100%, 640px);aspect-ratio:auto;box-shadow:none}
   .inv-grid{position:relative;inset:auto;grid-template-columns:1fr;row-gap:0;padding:calc(150*var(--u)) calc(30*var(--u)) calc(190*var(--u))}
   .inv-corner{width:calc(250*var(--u))}
